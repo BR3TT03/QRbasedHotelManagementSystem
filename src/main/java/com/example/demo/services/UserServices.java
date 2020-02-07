@@ -1,5 +1,7 @@
 package com.example.demo.services;
 
+
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +18,7 @@ public class UserServices {
 	 @Autowired 
 	   UserRepository repository;
 	 @Autowired 
-	   MenuRepository menu;
+	   MenuRepository menuRe;
 	   
 	 public void UserService(UserRepository userRepository) {
 		 this.repository=userRepository;
@@ -24,13 +26,25 @@ public class UserServices {
 	 public void addToPurchase(Purchase purchase) {
 		 repository.save(purchase);
 	}
+	 public void addToMenu(Menu menu) {
+		 menuRe.save(menu);
+	}
 	public List<Purchase> myOrders(int id) {
 		
 		return  repository.findByTableNo(id);
 	 }
 	 
 	public Object menuItemss(){
-		return  menu.findAll();
+		
+		
+		return   menuRe.findAll();
+	}
+	public Object getById(int id) {
+		// TODO Auto-generated method stub
+	
+		
+		
+		return menuRe.findById(id);
 	}
 	
 	
