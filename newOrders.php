@@ -2,7 +2,7 @@
 	include 'database.php';
 	
 	///*
-	$sql="Select count(id)AS s from purchase WHERE status=1 ";
+	$sql="Select count(id) AS s from purchase WHERE status=1";
 	$test = array();
 	$results = $conn->query($sql);
 		$num = $results->num_rows;
